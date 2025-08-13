@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Data files (sẽ được tự tạo)
+data/orders.json
+data/logs.json
+
+# Build outputs
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+*.test.js
+
+# Backup files
+*.bak
+*.backup
+
+# Log files
+*.log
+
+# Cleanup scripts
+clean-*.bat
