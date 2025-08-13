@@ -164,7 +164,7 @@ async function handleCheckPayButton(interaction, orderCode) {
 }
 
 /* ───────────────────────── LOGIN ─────────────────────────── */
-client.login(config.TOKEN);
+client.login(process.env.TOKEN);
 
 /* Bắt mọi unhandled promise để log ra console (giúp debug) */
 process.on('unhandledRejection', console.error);

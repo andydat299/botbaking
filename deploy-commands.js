@@ -6,6 +6,9 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import config from './config.json' assert { type: 'json' };
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,19 +22,19 @@ for (const file of commandFiles) {
   commands.push(command.default.data.toJSON());
 }
 
-const rest = new REST({ version: '10' }).setToken(config.TOKEN);
+const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 
 try {
   console.log('Started refreshing application (/) commands.');
   if (config.GUILD_ID && config.GUILD_ID !== 'OPTIONAL_TEST_GUILD_ID') {
     await rest.put(
-      Routes.applicationGuildCommands(config.CLIENT_ID, config.GUILD_ID),
+      Routes.applicationGuildCommands(process.env.CLIENT_ID, config.GUILD_ID),
       { body: commands },
     );
     console.log('Successfully reloaded guild application (/) commands.');
   } else {
     await rest.put(
-      Routes.applicationCommands(config.CLIENT_ID),
+      Routes.applicationCommands(process.env.CLIENT_ID),
       { body: commands },
     );
     console.log('Successfully reloaded global application (/) commands.');
