@@ -17,9 +17,9 @@ import config from '../config.json' with { type: 'json' };
 
 dotenv.config();
 
-const ACCOUNT_NO = '105873247598';
-const ACCOUNT_NAME = 'TRAN VINH DAT';
-const ACQ_ID = 970415;
+const ACCOUNT_NO = '0908101465';
+const ACCOUNT_NAME = 'Van Thuy Vy';
+const ACQ_ID = 970422;
 const TEMPLATE = 'print';
 
 const __filename = fileURLToPath(import.meta.url);
